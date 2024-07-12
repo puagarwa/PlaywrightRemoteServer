@@ -22,11 +22,13 @@ jobs:
       run: npx playwright run-server --port 8090 &
       env:
         DEBUG: pw:browser*
+        DEBUG_FILE: playwright-report/server.log
 
     - name: Run Playwright tests
       run: npx playwright test --repeat-each=100
       env:
         DEBUG: pw:browser*
+        DEBUG_FILE: playwright-report/debug.log
     - uses: actions/upload-artifact@v3
       if: always()
       with:
