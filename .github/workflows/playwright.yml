@@ -17,6 +17,12 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
+    - name: Run Server
+      run: npx playwright run-server --port 8090 &
+      env:
+        DEBUG: pw:browser*
+
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v3
@@ -25,3 +31,5 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+      env:
+        DEBUG: pw:browser*
