@@ -21,7 +21,7 @@ Repro
 - trace:'on-first-retry'
 - Run this test against remote playwright server 
 
-Expected:
+Expected: (sample https://github.com/puagarwa/PlaywrightRemoteServer/actions/runs/10091974849/job/27904650129)
 test run should pass since test is pass in second attempt.
 
 Actual:
